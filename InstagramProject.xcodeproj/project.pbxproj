@@ -18,6 +18,10 @@
 		B7AC45AA24118FCB0036F392 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7AC45A924118FCB0036F392 /* GoogleService-Info.plist */; };
 		B7AC45AD241194010036F392 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45AC241194010036F392 /* AuthenticationSession.swift */; };
 		B7AC45B2241194D60036F392 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45B1241194D60036F392 /* UIViewControllerExt.swift */; };
+		B7AC45B42411B7780036F392 /* AlertExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45B32411B7780036F392 /* AlertExt.swift */; };
+		B7AC45B62411BECA0036F392 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45B52411BECA0036F392 /* HomeViewController.swift */; };
+		B7AC45B82411BF6A0036F392 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AC45B72411BF6A0036F392 /* MainView.storyboard */; };
+		B7AC45BA2411C22B0036F392 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45B92411C22B0036F392 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		B7AC45A924118FCB0036F392 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7AC45AC241194010036F392 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		B7AC45B1241194D60036F392 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		B7AC45B32411B7780036F392 /* AlertExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExt.swift; sourceTree = "<group>"; };
+		B7AC45B52411BECA0036F392 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B7AC45B72411BF6A0036F392 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		B7AC45B92411C22B0036F392 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DB955C8315EDED66F6E92535 /* Pods-InstagramProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramProject.debug.xcconfig"; path = "Target Support Files/Pods-InstagramProject/Pods-InstagramProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B7669F1E24111D94003F821D /* LaunchScreen.storyboard */,
+				B7AC45B72411BF6A0036F392 /* MainView.storyboard */,
 				B7669F2924111E12003F821D /* Login.storyboard */,
 			);
 			path = Storyboards;
@@ -124,6 +133,8 @@
 			children = (
 				B7669F1724111D93003F821D /* LoginViewController.swift */,
 				B7AC45A72411885B0036F392 /* SignUpViewController.swift */,
+				B7AC45B52411BECA0036F392 /* HomeViewController.swift */,
+				B7AC45B92411C22B0036F392 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				B7AC45B1241194D60036F392 /* UIViewControllerExt.swift */,
+				B7AC45B32411B7780036F392 /* AlertExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +225,7 @@
 			files = (
 				B7669F2024111D94003F821D /* LaunchScreen.storyboard in Resources */,
 				B7AC45AA24118FCB0036F392 /* GoogleService-Info.plist in Resources */,
+				B7AC45B82411BF6A0036F392 /* MainView.storyboard in Resources */,
 				B7669F1D24111D94003F821D /* Assets.xcassets in Resources */,
 				B7669F2A24111E12003F821D /* Login.storyboard in Resources */,
 			);
@@ -267,12 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7AC45B42411B7780036F392 /* AlertExt.swift in Sources */,
 				B7669F1824111D93003F821D /* LoginViewController.swift in Sources */,
+				B7AC45BA2411C22B0036F392 /* MainTabBarController.swift in Sources */,
 				B7669F1424111D93003F821D /* AppDelegate.swift in Sources */,
 				B7AC45B2241194D60036F392 /* UIViewControllerExt.swift in Sources */,
 				B7AC45A82411885B0036F392 /* SignUpViewController.swift in Sources */,
 				B7AC45AD241194010036F392 /* AuthenticationSession.swift in Sources */,
 				B7669F1624111D93003F821D /* SceneDelegate.swift in Sources */,
+				B7AC45B62411BECA0036F392 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

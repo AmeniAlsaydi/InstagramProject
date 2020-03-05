@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="cKJ-t6-6Vp">
+            <objects>
+                <viewController id="q7u-c1-FNY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JAt-y2-KkE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YDn-yc-BgF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="plus.app" catalog="system" selectedImage="plus.app.fill" id="K7d-KW-IhI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnR-N8-sB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="439"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5vO-Bk-lui">
+            <objects>
+                <viewController id="ivZ-2z-LI0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vme-iL-BiM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nHB-iP-GJn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="Rss-rQ-12x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zC-Vz-2zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="1156"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4DL-ea-HB9">
+            <objects>
+                <viewController id="M1A-YK-XFb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IDC-Sp-QAm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Qpd-d8-eqZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="haV-Su-DG2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0j-Xy-PcT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="-208"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="Jkx-zJ-0ZL">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" id="HaB-aX-CD2" customClass="MainTabBarController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KoA-0k-ZGV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="M1A-YK-XFb" kind="relationship" relationship="viewControllers" id="ypn-tT-27t"/>
+                        <segue destination="q7u-c1-FNY" kind="relationship" relationship="viewControllers" id="ivy-Zm-yrj"/>
+                        <segue destination="ivZ-2z-LI0" kind="relationship" relationship="viewControllers" id="KuZ-Ja-bhh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4R-Xi-Abn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1201" y="439"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="plus.app" catalog="system" width="64" height="56"/>
+        <image name="plus.app.fill" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

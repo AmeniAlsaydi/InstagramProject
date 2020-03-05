@@ -37,23 +37,16 @@ class LoginViewController: UIViewController {
             case .failure(let error):
                 DispatchQueue.main.async {
                     // display error
-                    //self.errorLabel.text = "\(error.localizedDescription)"
-                    //self.errorLabel.textColor = .systemRed
+                    self.showAlert(title: "Invalid password or email", message: "\(error.localizedDescription)")
                 }
-            case .success(let authResultData):
+            case .success:
                 DispatchQueue.main.async {
-                    self.navigateToMainView()
+                    print("Hello")
+                    UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "MainTabBarController")
+                    
                 }
             }
         }
     }
-    
-    private func navigateToMainView() {
-        // we have the uiviewcontroller extension
-        // no mainView yet 
-        UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "MainTabBarController")
-        
-    }
-    
 }
 
