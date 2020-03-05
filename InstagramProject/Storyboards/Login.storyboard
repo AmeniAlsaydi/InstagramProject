@@ -108,7 +108,9 @@
                         <viewLayoutGuide key="safeArea" id="o4f-kd-1C2"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="Xd6-CK-SM5" id="lpU-lf-xdy"/>
                         <outlet property="logInButton" destination="cRj-HU-lcI" id="2QF-rI-bC5"/>
+                        <outlet property="passwordTextField" destination="50t-2R-wgR" id="SnP-We-mzY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccQ-GF-QVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
