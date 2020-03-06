@@ -30,6 +30,7 @@
 		B7AC45C7241276730036F392 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45C6241276730036F392 /* EditProfileViewController.swift */; };
 		B7AC45C92412B74E0036F392 /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45C82412B74E0036F392 /* StorageServices.swift */; };
 		B7AC45CB2412E6220036F392 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45CA2412E6220036F392 /* ShareViewController.swift */; };
+		B7AC45CD2413053B0036F392 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45CC2413053B0036F392 /* DatabaseServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		B7AC45C6241276730036F392 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		B7AC45C82412B74E0036F392 /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		B7AC45CA2412E6220036F392 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		B7AC45CC2413053B0036F392 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
 		DB955C8315EDED66F6E92535 /* Pods-InstagramProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramProject.debug.xcconfig"; path = "Target Support Files/Pods-InstagramProject/Pods-InstagramProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 			children = (
 				B7AC45AC241194010036F392 /* AuthenticationSession.swift */,
 				B7AC45C82412B74E0036F392 /* StorageServices.swift */,
+				B7AC45CC2413053B0036F392 /* DatabaseServices.swift */,
 			);
 			path = "FirebaseServices ";
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				B7AC45AD241194010036F392 /* AuthenticationSession.swift in Sources */,
 				B7669F1624111D93003F821D /* SceneDelegate.swift in Sources */,
 				B7AC45B62411BECA0036F392 /* HomeViewController.swift in Sources */,
+				B7AC45CD2413053B0036F392 /* DatabaseServices.swift in Sources */,
 				B7AC45CB2412E6220036F392 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
