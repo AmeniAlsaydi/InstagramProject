@@ -1,5 +1,5 @@
 //
-//  MainTabBarController.swift
+//  AddViewController.swift
 //  InstagramProject
 //
 //  Created by Amy Alsaydi on 3/5/20.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class AddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .red
+
         // Do any additional setup after loading the view.
     }
     
