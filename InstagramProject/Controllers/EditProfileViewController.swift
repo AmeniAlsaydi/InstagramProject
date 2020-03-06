@@ -8,11 +8,15 @@
 
 import UIKit
 import FirebaseAuth
+import Kingfisher
 
 class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
+    private let storageService = StorageService()
     
     private lazy var imagePickerController: UIImagePickerController = {
         let ip = UIImagePickerController()
@@ -26,9 +30,36 @@ class EditProfileViewController: UIViewController {
          }
        }
     
+    override func viewDidLayoutSubviews() {
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadUserInfo()
+    }
+    
+    private func loadUserInfo() {
+        // load feilds with already saved user info - profile pic, display name aka username, Bio , phone number?
+        
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        
+        if let photoUrl = user.photoURL {
+            profileImageView.kf.setImage(with: photoUrl)
+        }
+        
+        selectedImage = profileImageView.image
+        
+        if let username = user.displayName {
+            usernameTextField.text = username
+        }
+        
+        if let userEmail = user.email {
+            emailTextField.text = userEmail
+        }
     }
     
     
@@ -58,11 +89,11 @@ class EditProfileViewController: UIViewController {
     
     
     @IBAction func doneEditingProfile(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+       // dismiss(animated: true, completion: nil)
         // save all changes to firebase -> user profile
         
         // get profile feilds
-        guard let selectedImage = selectedImage else {
+        guard let selectedImage = selectedImage else { // unless they change the image it will return
             print("CHECK FEILDS 😅")
             return
         }
@@ -74,7 +105,40 @@ class EditProfileViewController: UIViewController {
         
         // update user profile using .createProfileChangeRequest()
         
+        storageService.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                self?.showAlert(title: "error uploading photo/ updating profile", message: "\(error.localizedDescription)")
+            case .success(let url):
+                let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                
+                if let userName = self?.usernameTextField.text, !userName.isEmpty {
+                    request?.displayName = userName
+                }
+                    request?.photoURL = url
+              
+                
+                request?.commitChanges(completion: { [unowned self] (error) in
+                    if let error = error  {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title: "Error updating profile", message: "Error: changing an alert \(error.localizedDescription) ")
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self?.showAlert(title:"Profile change" , message: "profile successfully created")
+                        }
+                    }
+                })
+            }
+
+        }
+        print("!!!")
         
+    }
+    
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -90,4 +154,3 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
         dismiss(animated: true)
     }
 }
-

@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var changeImageButton: UIButton!
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,8 +23,6 @@ class ProfileViewController: UIViewController {
         editProfileButton.layer.borderColor = #colorLiteral(red: 0.06776300818, green: 0.06778242439, blue: 0.06776044518, alpha: 1)
         editProfileButton.layer.borderWidth = 1
         editProfileButton.layer.cornerRadius = 7
-
-        
     }
 
     override func viewDidLoad() {
@@ -32,7 +30,24 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .systemGroupedBackground
         collectionView.dataSource = self
         collectionView.delegate = self
+        loadUserInfo()
 
+    }
+    
+    private func loadUserInfo() {
+        // load feilds with already saved user info - profile pic, display name aka username, Bio , phone number?
+        
+        guard let user = Auth.auth().currentUser, let photoUrl = user.photoURL else {
+            return
+        }
+        userImageView.kf.setImage(with: photoUrl)
+        // user.email
+        // user.displayName
+        // user.phoneNumber
+        // user.photoURL
+        
+        
+        
     }
     
     @IBAction func editProfileButtonPressed(_ sender: UIButton) {
