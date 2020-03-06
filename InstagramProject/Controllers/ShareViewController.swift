@@ -39,6 +39,8 @@ class ShareViewController: UIViewController {
         // 2. Dissmiss VC and move to home tab
         // 3. Local notification that there has been a post
         
+        
+        
     }
     
 

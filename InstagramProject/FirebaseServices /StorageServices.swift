@@ -28,7 +28,7 @@ class StorageService {
     // image -> resize selected image (for storage purposes) -> convert to data -> pass to firebase (uploadData)
     // get download url and attach it to photo
     
-    public func uploadPhoto(userId: String? = nil, image: UIImage, completion: @escaping (Result <URL, Error>) -> ()) {
+    public func uploadPhoto(userId: String? = nil, postId: String? = nil, image: UIImage, completion: @escaping (Result <URL, Error>) -> ()) {
         // 1. convert UIimage to data because this is the object we are posting to firebase storage
         
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
@@ -42,8 +42,8 @@ class StorageService {
         
         if let userId = userId { // coming from profile VC
             photoReference = storageRef.child("UserProfilePhotos/\(userId).jpg") // similar to an append, creating a sub folder in that specific reference
-        } else {
-            print("no userId passed check how you called - uploadPhoto")
+        } else if let postId = postId {
+            photoReference = storageRef.child("PostPhotos/\(postId).jpg")
         }
         
         

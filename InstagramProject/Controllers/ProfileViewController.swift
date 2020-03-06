@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController {
         editProfileButton.layer.borderColor = #colorLiteral(red: 0.06776300818, green: 0.06778242439, blue: 0.06776044518, alpha: 1)
         editProfileButton.layer.borderWidth = 1
         editProfileButton.layer.cornerRadius = 7
+        userImageView.layer.cornerRadius = userImageView.frame.width/2
     }
 
     override func viewDidLoad() {
@@ -37,12 +38,19 @@ class ProfileViewController: UIViewController {
     private func loadUserInfo() {
         // load feilds with already saved user info - profile pic, display name aka username, Bio , phone number?
         
-        guard let user = Auth.auth().currentUser, let photoUrl = user.photoURL else {
+        guard let user = Auth.auth().currentUser else {
             return
         }
-        userImageView.kf.setImage(with: photoUrl)
+        if let photoUrl = user.photoURL {
+            userImageView.kf.setImage(with: photoUrl)
+
+        }
+        
+        if let username = user.displayName {
+            navigationItem.title = username
+        }
+        
         // user.email
-        // user.displayName
         // user.phoneNumber
         // user.photoURL
         
