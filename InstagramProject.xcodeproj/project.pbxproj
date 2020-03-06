@@ -26,6 +26,8 @@
 		B7AC45BE2411C4E20036F392 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45BD2411C4E20036F392 /* ProfileViewController.swift */; };
 		B7AC45C02411C9AE0036F392 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45BF2411C9AE0036F392 /* UIImageExt.swift */; };
 		B7AC45C22411D5120036F392 /* UserPostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45C12411D5120036F392 /* UserPostsCell.swift */; };
+		B7AC45C524126AF50036F392 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45C424126AF50036F392 /* Post.swift */; };
+		B7AC45C7241276730036F392 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45C6241276730036F392 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		B7AC45BD2411C4E20036F392 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B7AC45BF2411C9AE0036F392 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		B7AC45C12411D5120036F392 /* UserPostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsCell.swift; sourceTree = "<group>"; };
+		B7AC45C424126AF50036F392 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B7AC45C6241276730036F392 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		DB955C8315EDED66F6E92535 /* Pods-InstagramProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramProject.debug.xcconfig"; path = "Target Support Files/Pods-InstagramProject/Pods-InstagramProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +108,7 @@
 		B7669F1224111D93003F821D /* InstagramProject */ = {
 			isa = PBXGroup;
 			children = (
+				B7AC45C324126AE80036F392 /* New Group */,
 				B7AC45B0241194C00036F392 /* Extensions */,
 				B7AC45AB241193CC0036F392 /* FirebaseServices  */,
 				B7669F2C24111E2C003F821D /* Views */,
@@ -145,6 +150,7 @@
 				B7AC45B52411BECA0036F392 /* HomeViewController.swift */,
 				B7AC45BB2411C4D60036F392 /* AddViewController.swift */,
 				B7AC45BD2411C4E20036F392 /* ProfileViewController.swift */,
+				B7AC45C6241276730036F392 /* EditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +179,14 @@
 				B7AC45BF2411C9AE0036F392 /* UIImageExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B7AC45C324126AE80036F392 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				B7AC45C424126AF50036F392 /* Post.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,8 +311,10 @@
 				B7669F1824111D93003F821D /* LoginViewController.swift in Sources */,
 				B7AC45BA2411C22B0036F392 /* MainTabBarController.swift in Sources */,
 				B7669F1424111D93003F821D /* AppDelegate.swift in Sources */,
+				B7AC45C524126AF50036F392 /* Post.swift in Sources */,
 				B7AC45C02411C9AE0036F392 /* UIImageExt.swift in Sources */,
 				B7AC45B2241194D60036F392 /* UIViewControllerExt.swift in Sources */,
+				B7AC45C7241276730036F392 /* EditProfileViewController.swift in Sources */,
 				B7AC45BE2411C4E20036F392 /* ProfileViewController.swift in Sources */,
 				B7AC45C22411D5120036F392 /* UserPostsCell.swift in Sources */,
 				B7AC45A82411885B0036F392 /* SignUpViewController.swift in Sources */,

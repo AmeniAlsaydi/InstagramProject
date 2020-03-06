@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private let userPosts = [Post]() // didSet?
+    
     
     override func viewDidLayoutSubviews() {
        
@@ -27,19 +29,60 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemGroupedBackground
+        collectionView.dataSource = self
+        collectionView.delegate = self
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func editProfileButtonPressed(_ sender: UIButton) {
+        // display view to edit the profile
+        // just a segue dont need this anymore 
         
     }
-    
-    
-    @IBAction func addNewImageButtonPressed(_ sender: Any) {
-        
-    }
-    
     
 
+}
+
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        userPosts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? UserPostsCell else {
+            fatalError("could mot dowmcast to postCell")
+        }
+        return cell
+    }
+    
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let interItemSpacing: CGFloat = 10
+        let maxWidth = UIScreen.main.bounds.size.width // device width
+        
+        let numberOfItems: CGFloat = 3
+        let totalSpacing: CGFloat = numberOfItems * interItemSpacing
+        
+        let itemWidth: CGFloat = (maxWidth - totalSpacing)/numberOfItems
+        
+        return CGSize(width: itemWidth, height: itemWidth)
+        
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        // padding surounding collectionview
+        return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
 }

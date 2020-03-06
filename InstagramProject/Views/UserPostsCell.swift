@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserPostsCell: UICollectionViewCell {
     
-    @IBOutlet weak var postImage: UIView!
-    
     @IBOutlet weak var postImageView: UIImageView!
     
+    
+    public func configureCell(post: Post) {
+        postImageView.kf.setImage(with: URL(string: post.imageUrl))
+        
+    }
 }
