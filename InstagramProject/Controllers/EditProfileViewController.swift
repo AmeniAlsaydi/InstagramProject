@@ -68,11 +68,11 @@ class EditProfileViewController: UIViewController {
         // display action sheet
         
         let alertController = UIAlertController(title: "Change Profile Photo", message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { alertAction in
+        let cameraAction = UIAlertAction(title: "Take Photo", style: .default) { alertAction in
             self.imagePickerController.sourceType = .camera
             self.present(self.imagePickerController, animated: true)
         }
-        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { alertAction in
+        let photoLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { alertAction in
             self.imagePickerController.sourceType = .photoLibrary
             self.present(self.imagePickerController, animated: true)
         }
