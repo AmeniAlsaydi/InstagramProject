@@ -56,8 +56,16 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
     guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
       return
     }
-    // display ShareViewController() // dependancy injection - inject the image (UIImage)
-    //selectedImage = image
-    dismiss(animated: true)
+    dismiss(animated: true, completion: nil)
+    // get instance of the storyboard
+    let appViewStoryboard = UIStoryboard(name: "MainView", bundle: nil)
+    let sharedVC = appViewStoryboard.instantiateViewController(identifier: "ShareViewController") { (coder) in
+      return ShareViewController(coder: coder, selectedImage: image)
+    }
+    sharedVC.modalPresentationStyle = .fullScreen
+    //sharedVC.modalTransitionStyle = .crossDissolve
+    present(UINavigationController(rootViewController: sharedVC), animated: true)
+    
+    
   }
 }

@@ -99,7 +99,7 @@
         <!--New Post-->
         <scene sceneID="yv8-Fr-2EB">
             <objects>
-                <viewController storyboardIdentifier="ShareViewController" id="FGq-Zt-719" customClass="ShareViewController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="FGq-Zt-719" customClass="ShareViewController" customModule="InstagramProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Fa-bo-3N1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
