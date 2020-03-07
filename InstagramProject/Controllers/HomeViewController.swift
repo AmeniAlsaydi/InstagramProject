@@ -75,6 +75,6 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize = UIScreen.main.bounds
-        return CGSize(width: maxSize.width, height: maxSize.height * 0.65)
+        return CGSize(width: maxSize.width, height: maxSize.height * 0.50)
     }
 }

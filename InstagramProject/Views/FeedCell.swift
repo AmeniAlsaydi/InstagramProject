@@ -17,11 +17,15 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var bottomUsernameLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     
+    override func layoutSubviews() {
+        userImage.layer.cornerRadius = userImage.frame.width/2
+    }
+    
     public func configureCell(post: Post) {
         // figure out user image
         usernameLabel.text = post.userName
         postedImage.kf.setImage(with: URL(string: post.imageURL))
-        bottomUsernameLabel.text = post.userName
+        bottomUsernameLabel.text = "@\(post.userName)"
         captionLabel.text = post.caption
         
     }
