@@ -15,7 +15,7 @@ class DatabaseService {
     private let db = Firestore.firestore() // top level of our database
     static let postCollecion = "posts"
     
-    private func createPost(caption: String, completion: @escaping (Result<String, Error>) -> ()) {
+    public func createPost(caption: String, completion: @escaping (Result<String, Error>) -> ()) {
         
         guard let user = Auth.auth().currentUser else { return }
         let documentRef = db.collection(DatabaseService.postCollecion).document() // a reference to the of posts collection document - has an auto generated id

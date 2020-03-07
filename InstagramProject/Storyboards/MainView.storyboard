@@ -134,6 +134,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionLabel" destination="3pb-Td-7Z3" id="4n6-aO-Zmc"/>
                         <outlet property="captionTextField" destination="e1S-fC-uFt" id="QO2-dq-Xa3"/>
                         <outlet property="postingImage" destination="WZk-Sq-5IW" id="sRC-Q3-4hX"/>
                     </connections>
