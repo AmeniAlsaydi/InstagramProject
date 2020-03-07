@@ -37,6 +37,12 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        print("user id \(user.uid)")
+        
         listener = Firestore.firestore().collection(DatabaseService.postCollecion).addSnapshotListener({ [weak self] (snapshot, error) in
             if let error = error {
                 DispatchQueue.main.async {
@@ -44,7 +50,7 @@ class ProfileViewController: UIViewController {
                 }
             } else if let snapshot = snapshot {
                 let posts = snapshot.documents.map { Post($0.data())}
-                self?.userPosts = posts
+                self?.userPosts = posts.filter { $0.userId == user.uid }
             }
         })
     }
@@ -86,13 +92,6 @@ class ProfileViewController: UIViewController {
         
         
     }
-    
-    @IBAction func editProfileButtonPressed(_ sender: UIButton) {
-        // display view to edit the profile
-        // just a segue dont need this anymore 
-        
-    }
-    
 
 }
 

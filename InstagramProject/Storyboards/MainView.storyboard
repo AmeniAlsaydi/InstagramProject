@@ -167,7 +167,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="editProfileButtonPressed:" destination="ivZ-2z-LI0" eventType="touchUpInside" id="17z-ZA-EmE"/>
                                     <segue destination="6Ae-jT-V3F" kind="presentation" modalPresentationStyle="fullScreen" id="Qv8-Fr-Be1"/>
                                 </connections>
                             </button>

@@ -9,9 +9,9 @@
 import Foundation
 
 struct Post {
-    let imageUrl: String
+    let imageURL: String
     let caption: String
-    let userID: String
+    let userId: String
     let userName: String
     let postDate: Date
 
@@ -19,9 +19,9 @@ struct Post {
 
 extension Post {
     init(_ dictionary: [String: Any]) {
-        self.imageUrl = dictionary["imageUrl"] as? String ?? "no image"
+        self.imageURL = dictionary["imageURL"] as? String ?? "no image"
         self.caption = dictionary["caption"] as? String ?? "no caption"
-        self.userID = dictionary["userID"] as? String ?? "no user id"
+        self.userId = dictionary["userId"] as? String ?? "no user id"
         self.userName = dictionary["username"] as? String ?? "no user name"
         self.postDate = dictionary["postDate"] as? Date ?? Date()
     }
