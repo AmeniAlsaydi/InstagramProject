@@ -41,7 +41,6 @@ class ProfileViewController: UIViewController {
         guard let user = Auth.auth().currentUser else {
             return
         }
-        print("user id \(user.uid)")
         
         listener = Firestore.firestore().collection(DatabaseService.postCollecion).addSnapshotListener({ [weak self] (snapshot, error) in
             if let error = error {
