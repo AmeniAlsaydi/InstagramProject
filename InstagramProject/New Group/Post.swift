@@ -20,9 +20,9 @@ struct Post {
 extension Post {
     init(_ dictionary: [String: Any]) {
         self.imageURL = dictionary["imageURL"] as? String ?? "no image"
-        self.caption = dictionary["caption"] as? String ?? "no caption"
+        self.caption = dictionary["caption"] as? String ?? "No caption"
         self.userId = dictionary["userId"] as? String ?? "no user id"
-        self.userName = dictionary["username"] as? String ?? "no user name"
+        self.userName = dictionary["username"] as? String ?? "AnonBot // no user name"
         self.postDate = dictionary["postDate"] as? Date ?? Date()
     }
 }
