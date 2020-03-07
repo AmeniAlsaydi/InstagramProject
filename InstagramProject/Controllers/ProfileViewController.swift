@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ProfileViewController: UIViewController {
     
@@ -15,7 +16,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let userPosts = [Post]() // didSet?
+    private var listener: ListenerRegistration?
+    
+    private var userPosts = [Post]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     
     override func viewDidLayoutSubviews() {
@@ -24,6 +33,26 @@ class ProfileViewController: UIViewController {
         editProfileButton.layer.borderWidth = 1
         editProfileButton.layer.cornerRadius = 7
         userImageView.layer.cornerRadius = userImageView.frame.width/2
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        listener = Firestore.firestore().collection(DatabaseService.postCollecion).addSnapshotListener({ [weak self] (snapshot, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Try again later", message: "\(error.localizedDescription)")
+                }
+            } else if let snapshot = snapshot {
+                let posts = snapshot.documents.map { Post($0.data())}
+                self?.userPosts = posts
+            }
+        })
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        listener?.remove()
     }
 
     override func viewDidLoad() {
@@ -77,6 +106,9 @@ extension ProfileViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? UserPostsCell else {
             fatalError("could mot dowmcast to postCell")
         }
+        
+        let post = userPosts[indexPath.row]
+        cell.configureCell(post: post)
         return cell
     }
     
