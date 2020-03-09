@@ -97,12 +97,20 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            UIViewController.showViewController(storyBoardName: "Login", viewControllerId: "LoginViewController")
-        } catch {
-            self.showAlert(title: "Error signing out", message: "\(error.localizedDescription)")
+        
+        
+        showOptionsAlert(title: nil, message: "Are you sure?") { (alerAction) in
+            if alerAction.title == "Yes, Get me out." {
+                
+                do {
+                    try Auth.auth().signOut()
+                    UIViewController.showViewController(storyBoardName: "Login", viewControllerId: "LoginViewController")
+                } catch {
+                    self.showAlert(title: "Error signing out", message: "\(error.localizedDescription)")
+                }
+            }
         }
+ 
     }
     
 }
