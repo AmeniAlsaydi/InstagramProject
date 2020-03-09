@@ -43,8 +43,8 @@ class ShareViewController: UIViewController {
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
         
         guard let caption = captionTextField.text, !caption.isEmpty else {
-            captionLabel.tintColor = .red
-            captionLabel.text = "Caption*"
+            captionLabel.textColor = .red
+            captionLabel.text = "Caption Required*"
             print("prompt user to enter caption- maybe make board red")
             return
         }

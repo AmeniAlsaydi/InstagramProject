@@ -118,7 +118,7 @@
 		B7669F1224111D93003F821D /* InstagramProject */ = {
 			isa = PBXGroup;
 			children = (
-				B7AC45C324126AE80036F392 /* New Group */,
+				B7AC45C324126AE80036F392 /* Model */,
 				B7AC45B0241194C00036F392 /* Extensions */,
 				B7AC45AB241193CC0036F392 /* FirebaseServices  */,
 				B7669F2C24111E2C003F821D /* Views */,
@@ -196,12 +196,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B7AC45C324126AE80036F392 /* New Group */ = {
+		B7AC45C324126AE80036F392 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				B7AC45C424126AF50036F392 /* Post.swift */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
