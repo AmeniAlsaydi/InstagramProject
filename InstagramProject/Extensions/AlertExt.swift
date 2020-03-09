@@ -16,4 +16,14 @@ extension UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    public func showOptionsAlert(title: String?, message: String, completion: ((UIAlertAction) -> Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes, Get me out.", style: .default, handler: completion)
+        let noAction = UIAlertAction(title: "No, I dont know what I want.", style: .default, handler: nil)
+        alertController.addAction(yesAction)
+        alertController.addAction(noAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
 }

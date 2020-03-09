@@ -22,13 +22,19 @@ class ProfileViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                
+                if self.userPosts.isEmpty {
+                    self.collectionView.backgroundView = EmptyView(title: "No Posts yet!", message: "Go Post stuff and remember to over share. 😅")
+                } else {
+                    self.collectionView.backgroundView = nil
+                }
             }
         }
     }
     
     
     override func viewDidLayoutSubviews() {
-       
+        
         editProfileButton.layer.borderColor = #colorLiteral(red: 0.06776300818, green: 0.06778242439, blue: 0.06776044518, alpha: 1)
         editProfileButton.layer.borderWidth = 1
         editProfileButton.layer.cornerRadius = 7
@@ -59,14 +65,14 @@ class ProfileViewController: UIViewController {
         super.viewWillDisappear(true)
         listener?.remove()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGroupedBackground
         collectionView.dataSource = self
         collectionView.delegate = self
         loadUserInfo()
-
+        
     }
     
     private func loadUserInfo() {
@@ -77,7 +83,7 @@ class ProfileViewController: UIViewController {
         }
         if let photoUrl = user.photoURL {
             userImageView.kf.setImage(with: photoUrl)
-
+            
         }
         
         if let username = user.displayName {
@@ -88,10 +94,17 @@ class ProfileViewController: UIViewController {
         // user.phoneNumber
         // user.photoURL
         
-        
-        
     }
-
+    
+    @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            UIViewController.showViewController(storyBoardName: "Login", viewControllerId: "LoginViewController")
+        } catch {
+            self.showAlert(title: "Error signing out", message: "\(error.localizedDescription)")
+        }
+    }
+    
 }
 
 

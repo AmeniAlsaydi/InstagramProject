@@ -32,6 +32,7 @@
 		B7AC45CB2412E6220036F392 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45CA2412E6220036F392 /* ShareViewController.swift */; };
 		B7AC45CD2413053B0036F392 /* DatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45CC2413053B0036F392 /* DatabaseServices.swift */; };
 		B7AC45CF241378EB0036F392 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45CE241378EB0036F392 /* FeedCell.swift */; };
+		B7AC45D12416B58A0036F392 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC45D02416B58A0036F392 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		B7AC45CA2412E6220036F392 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		B7AC45CC2413053B0036F392 /* DatabaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServices.swift; sourceTree = "<group>"; };
 		B7AC45CE241378EB0036F392 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		B7AC45D02416B58A0036F392 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		DB955C8315EDED66F6E92535 /* Pods-InstagramProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramProject.debug.xcconfig"; path = "Target Support Files/Pods-InstagramProject/Pods-InstagramProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 			children = (
 				B7AC45C12411D5120036F392 /* UserPostsCell.swift */,
 				B7AC45CE241378EB0036F392 /* FeedCell.swift */,
+				B7AC45D02416B58A0036F392 /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				B7AC45A82411885B0036F392 /* SignUpViewController.swift in Sources */,
 				B7AC45AD241194010036F392 /* AuthenticationSession.swift in Sources */,
 				B7669F1624111D93003F821D /* SceneDelegate.swift in Sources */,
+				B7AC45D12416B58A0036F392 /* EmptyView.swift in Sources */,
 				B7AC45B62411BECA0036F392 /* HomeViewController.swift in Sources */,
 				B7AC45CD2413053B0036F392 /* DatabaseServices.swift in Sources */,
 				B7AC45CB2412E6220036F392 /* ShareViewController.swift in Sources */,
